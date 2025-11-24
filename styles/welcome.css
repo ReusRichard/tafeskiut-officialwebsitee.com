@@ -1,0 +1,191 @@
+/* Welcome Animation Styles */
+.welcome-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 0.5s ease;
+}
+
+.animation-content {
+    text-align: center;
+    position: relative;
+}
+
+/* Rotating Circle with Text */
+.rotating-circle {
+    position: relative;
+    width: 220px; /* Increased from 180px */
+    height: 220px;
+    margin: 0 auto 30px;
+}
+
+.circle-base {
+    width: 100%;
+    height: 100%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+}
+
+.rotating-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 20s linear infinite;
+}
+
+.rotating-text span {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform-origin: 0 110px; /* Adjusted for new radius */
+    font-weight: 600;
+    font-size: 16px; /* Increased from 14px */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.circle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px; /* Increased from 55px */
+    height: 80px;
+    background: white;
+    border-radius: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.circle-center img {
+    width: 70px; /* Increased from 50px */
+    height: 70px;
+    border-radius: 50%;
+}
+
+.logo-placeholder {
+    width: 70px; /* Increased from 50px */
+    height: 70px;
+    background: #0066cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px; /* Increased from 12px */
+}
+
+/* Text Animation */
+.text-animation h2 {
+    font-size: 1.5rem;
+    margin: 10px 0 5px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.5s forwards;
+}
+
+.text-animation h1 {
+    font-size: 3rem;
+    margin: 0 0 10px;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 1s forwards;
+}
+
+.text-animation p {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 1.5s forwards;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    margin: 30px auto 0;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: white;
+    animation: loading 2.5s ease 2s forwards;
+}
+
+/* Animations */
+@keyframes rotateText {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes loading {
+    to { width: 100%; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rotating-circle {
+        width: 180px; /* Adjusted for smaller screens */
+        height: 180px;
+    }
+
+    .rotating-text span {
+        transform-origin: 0 90px;
+        font-size: 14px;
+    }
+
+    .circle-center {
+        width: 65px;
+        height: 65px;
+    }
+
+    .circle-center img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .logo-placeholder {
+        width: 65px;
+        height: 65px;
+        font-size: 14px;
+    }
+
+    .text-animation h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-animation h2 {
+        font-size: 1.3rem;
+    }
+
+    .text-animation p {
+        font-size: 1rem;
+    }
+}
